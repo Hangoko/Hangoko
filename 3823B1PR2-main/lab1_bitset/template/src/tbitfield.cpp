@@ -10,19 +10,19 @@
 
 TBitField::TBitField(int len)
 {
-	BitLen = len * __SIZEOF_INT__; 
-	pMem = new TELEM(len);
-	MemLen = len;
+	BitLen = len * sizeof(TELEM);
+	MemLen = len; 
+	pMem = new TELEM(len);	
 }
 
 TBitField::TBitField(const TBitField& bf) // конструктор копирования
 {
 	BitLen = bf.BitLen;
+	MemLen = bf.MemLen;
 	pMem = new TELEM(bf.MemLen);
-	for(int i = 0; i < bf.MemLen; i++) {
+	for(int i = 0; i < bf.MemLen; i++) {	
 		pMem[i] = bf.pMem[i];
 	}
-	MemLen = bf.MemLen;
 }
 
 TBitField::~TBitField()
@@ -32,18 +32,14 @@ TBitField::~TBitField()
 
 int TBitField::GetMemIndex(const int n) const // индекс Мем для бита n
 {
-	if (n >= 0 && n <= BitLen) {
-		return n / (__SIZEOF_INT__ * 8);
-	}
-	throw ("Index went out of range!");
+	if (n <= 0 || n >= BitLen) throw ("Index went out of range!");
+	return n / (sizeof(TELEM) * 8);
 }
 
 TELEM TBitField::GetMemMask(const int n) const // битовая маска для бита n
 {
-	if (n >= 0 && n <= BitLen) {
-		return 1 << n;
-	}
-	throw ("Index went out of range!");
+	if (n <= 0 || n >= BitLen) throw ("Index went out of range!");
+	return 1 << n;
 }
 
 // доступ к битам битового поля
@@ -55,17 +51,20 @@ int TBitField::GetLength(void) const // получить длину (к-во б�
 
 void TBitField::SetBit(const int n) // установить бит
 {
+	if (n < 0 || n >= BitLen)  throw ("Index is not correct!");
 	pMem[GetMemIndex(n)] |= GetMemMask(n);
 }
 
 void TBitField::ClrBit(const int n) // очистить бит
 {
-	pMem[GetMemIndex(n)] ^= GetMemMask(n);
+	if (n < 0 || n >= BitLen) throw ("Index is not correct!");
+	pMem[GetMemIndex(n)] &= ~GetMemMask(n);
 }
 
 int TBitField::GetBit(const int n) const // получить значение бита
 {
-	return pMem[GetMemIndex(n)] & GetMemMask(n) != 0 ? 1 : 0;
+	if (n < 0 || n >= BitLen) throw ("Index is not correct!");
+	return pMem[GetMemIndex(n)] & GetMemMask(n);
 }
 
 // битовые операции
@@ -73,24 +72,20 @@ int TBitField::GetBit(const int n) const // получить значение б
 TBitField& TBitField::operator=(const TBitField& bf) // присваивание
 {
 	BitLen = bf.BitLen;
+	MemLen = bf.MemLen;
 	delete[] pMem;
-	pMem = new TELEM(bf.MemLen);
-	for(int i = 0; i < bf.MemLen; i++) {
+	pMem = new TELEM[MemLen];
+	for(int i = 0; i < MemLen; i++) {
 		pMem[i] = bf.pMem[i];
 	}
-	MemLen = bf.MemLen;
 	return *this;
 }
 
 int TBitField::operator==(const TBitField& bf) const // сравнение
 {
-	if (BitLen != bf.BitLen || MemLen != bf.MemLen) {
-		return 0;
-	}
+	if (BitLen != bf.BitLen || MemLen != bf.MemLen) return 0;
 	for (int i = 0; i < MemLen; i++) {
-		if (pMem[i] != bf.pMem[i]) {
-			return 0;
-		}
+		if (pMem[i] != bf.pMem[i]) return 0;
 	}
 	return 1;
 }

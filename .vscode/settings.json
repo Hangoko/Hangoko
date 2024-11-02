@@ -1,4 +1,4 @@
 {
     "C_Cpp.default.compilerPath": "C:\\msys64\\mingw64\\bin\\gcc.exe",
-    "cmake.ignoreCMakeListsMissing": true
+    "cmake.sourceDirectory": "D:/Progs Files/Hangoko/3823B1PR2-main/lab1_bitset/template",
 }

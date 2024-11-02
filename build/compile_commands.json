@@ -1,0 +1,44 @@
+[
+{
+  "directory": "D:/Progs Files/Hangoko/build/src",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/set.dir/includes_CXX.rsp -g -o CMakeFiles\\set.dir\\tbitfield.cpp.obj -c \"D:\\Progs Files\\Hangoko\\3823B1PR2-main\\lab1_bitset\\template\\src\\tbitfield.cpp\"",
+  "file": "D:/Progs Files/Hangoko/3823B1PR2-main/lab1_bitset/template/src/tbitfield.cpp",
+  "output": "src/CMakeFiles/set.dir/tbitfield.cpp.obj"
+},
+{
+  "directory": "D:/Progs Files/Hangoko/build/src",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/set.dir/includes_CXX.rsp -g -o CMakeFiles\\set.dir\\tset.cpp.obj -c \"D:\\Progs Files\\Hangoko\\3823B1PR2-main\\lab1_bitset\\template\\src\\tset.cpp\"",
+  "file": "D:/Progs Files/Hangoko/3823B1PR2-main/lab1_bitset/template/src/tset.cpp",
+  "output": "src/CMakeFiles/set.dir/tset.cpp.obj"
+},
+{
+  "directory": "D:/Progs Files/Hangoko/build/samples",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/sample_prime_numbers.dir/includes_CXX.rsp -g -o CMakeFiles\\sample_prime_numbers.dir\\sample_prime_numbers.cpp.obj -c \"D:\\Progs Files\\Hangoko\\3823B1PR2-main\\lab1_bitset\\template\\samples\\sample_prime_numbers.cpp\"",
+  "file": "D:/Progs Files/Hangoko/3823B1PR2-main/lab1_bitset/template/samples/sample_prime_numbers.cpp",
+  "output": "samples/CMakeFiles/sample_prime_numbers.dir/sample_prime_numbers.cpp.obj"
+},
+{
+  "directory": "D:/Progs Files/Hangoko/build/gtest",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/gtest.dir/includes_CXX.rsp -g -o CMakeFiles\\gtest.dir\\gtest-all.cc.obj -c \"D:\\Progs Files\\Hangoko\\3823B1PR2-main\\lab1_bitset\\template\\gtest\\gtest-all.cc\"",
+  "file": "D:/Progs Files/Hangoko/3823B1PR2-main/lab1_bitset/template/gtest/gtest-all.cc",
+  "output": "gtest/CMakeFiles/gtest.dir/gtest-all.cc.obj"
+},
+{
+  "directory": "D:/Progs Files/Hangoko/build/test",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/test_set.dir/includes_CXX.rsp -g -o CMakeFiles\\test_set.dir\\test_main.cpp.obj -c \"D:\\Progs Files\\Hangoko\\3823B1PR2-main\\lab1_bitset\\template\\test\\test_main.cpp\"",
+  "file": "D:/Progs Files/Hangoko/3823B1PR2-main/lab1_bitset/template/test/test_main.cpp",
+  "output": "test/CMakeFiles/test_set.dir/test_main.cpp.obj"
+},
+{
+  "directory": "D:/Progs Files/Hangoko/build/test",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/test_set.dir/includes_CXX.rsp -g -o CMakeFiles\\test_set.dir\\test_tbitfield.cpp.obj -c \"D:\\Progs Files\\Hangoko\\3823B1PR2-main\\lab1_bitset\\template\\test\\test_tbitfield.cpp\"",
+  "file": "D:/Progs Files/Hangoko/3823B1PR2-main/lab1_bitset/template/test/test_tbitfield.cpp",
+  "output": "test/CMakeFiles/test_set.dir/test_tbitfield.cpp.obj"
+},
+{
+  "directory": "D:/Progs Files/Hangoko/build/test",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/test_set.dir/includes_CXX.rsp -g -o CMakeFiles\\test_set.dir\\test_tset.cpp.obj -c \"D:\\Progs Files\\Hangoko\\3823B1PR2-main\\lab1_bitset\\template\\test\\test_tset.cpp\"",
+  "file": "D:/Progs Files/Hangoko/3823B1PR2-main/lab1_bitset/template/test/test_tset.cpp",
+  "output": "test/CMakeFiles/test_set.dir/test_tset.cpp.obj"
+}
+]

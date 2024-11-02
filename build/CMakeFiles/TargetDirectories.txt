@@ -1,0 +1,14 @@
+D:/Progs Files/Hangoko/build/CMakeFiles/edit_cache.dir
+D:/Progs Files/Hangoko/build/CMakeFiles/rebuild_cache.dir
+D:/Progs Files/Hangoko/build/src/CMakeFiles/set.dir
+D:/Progs Files/Hangoko/build/src/CMakeFiles/edit_cache.dir
+D:/Progs Files/Hangoko/build/src/CMakeFiles/rebuild_cache.dir
+D:/Progs Files/Hangoko/build/samples/CMakeFiles/sample_prime_numbers.dir
+D:/Progs Files/Hangoko/build/samples/CMakeFiles/edit_cache.dir
+D:/Progs Files/Hangoko/build/samples/CMakeFiles/rebuild_cache.dir
+D:/Progs Files/Hangoko/build/gtest/CMakeFiles/gtest.dir
+D:/Progs Files/Hangoko/build/gtest/CMakeFiles/edit_cache.dir
+D:/Progs Files/Hangoko/build/gtest/CMakeFiles/rebuild_cache.dir
+D:/Progs Files/Hangoko/build/test/CMakeFiles/test_set.dir
+D:/Progs Files/Hangoko/build/test/CMakeFiles/edit_cache.dir
+D:/Progs Files/Hangoko/build/test/CMakeFiles/rebuild_cache.dir

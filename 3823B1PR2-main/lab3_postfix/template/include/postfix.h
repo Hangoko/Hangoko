@@ -11,6 +11,52 @@ using namespace std;
 
 class Postfix {
 private:
+    int priority(string str) {
+        if (str == "+" || str == "-") {
+            return 1;
+        }
+        else if (str == "*" || str == "/" || str == "s" || str == "c" || str == "tg" || str == "ctg" || str == "l") {
+            return 2;
+        }
+        else if (str == "^") {
+            return 3;
+        }
+        return 0;
+    }
+
+    vector<string> toPostfix(vector<string> elems) {
+        Stack<string> operators;
+        vector<string> postfix;
+
+        for (string str: elems) {
+            if (IsDigit(str)) { // Если число, то записываем в результат.
+                postfix.push_back(str); 
+            }
+            else if (str == "(") {
+                operators.Push(str);
+            }
+            else if (str == ")") { // Если проверяемая строка - закрытая скобка, добавляем все операции в результат до момента достижения открытой скобки.
+                while (!operators.empty() && operators.top() != "(") {
+                    postfix.push_back(operators.pop());
+                }
+                operators.pop();
+            }
+            else { // Смотрим, были ли у нас операции до этого. Если да, то проверяем по приоритету. В случае, если прошлая операция была более приоритетной, то записываем ее в резутат. Если операций до этого не было или же операция, которую 
+                   // мы проверяем, по приоритету выше, то записываем ее в массив операций ("в очередь"). 
+                while (!operators.empty() && priority(operators.top()) >= priority(str)) {
+                    postfix.push_back(operators.pop());
+                }
+                operators.Push(str);
+            }
+        }
+
+        while(!operators.empty()) { // Записываем в результат все операции из "очереди".
+            postfix.push_back(operators.pop());
+        }
+
+        return postfix;
+    }
+
     vector<string> split(const string& str, char separator) { // Суть как в Питоне. Разделяем строку "разделительным" символом, создавая массив из элементов строки.
         vector<string> result;
         string elem;
@@ -40,7 +86,7 @@ private:
     }
 public:
     double calculation(const string& expression) {
-        vector<string> symbols = split(expression, ' ');
+        vector<string> symbols = toPostfix(split(expression, ' '));
         Stack<double> stack;
 
         for (const string& symbol : symbols) {
